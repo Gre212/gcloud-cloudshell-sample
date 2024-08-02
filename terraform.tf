@@ -56,6 +56,6 @@ resource "google_service_account_iam_policy" "admin_account_iam" {
 
 resource "google_project_iam_member" "service_account_instance_admin" {
   project = local.project
-  role    = "roles/compute.instanceAdmin.v1"
+  role    = "roles/compute.loadBalancerAdmin"
   member  = "serviceAccount:${google_service_account.test_private_service_account.email}"
 }
